@@ -7,3 +7,5 @@ Download [madeline.php](https://phar.madelineproto.xyz/madeline.php), and includ
 ```
 include 'madeline.php';
 ```
+
+That's it.
