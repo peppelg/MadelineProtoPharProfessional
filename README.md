@@ -1,11 +1,9 @@
 # MadelineProtoPhar
 
-This website contains the [MadelineProto](https://madelineproto.xyz) phar installer.
+This website contains the [MadelineProto](https://madelineproto.xyz) easy installer.
 
 ## Usage:
-Download [phar.php](https://phar.madelineproto.xyz/phar.php), and include it in your script:
+Download [madeline.php](https://phar.madelineproto.xyz/madeline.php), and include it in your script:
 ```
-include 'phar.php';
+include 'madeline.php';
 ```
-
-It will automatically download the latest version of MadelineProto and import it.
