@@ -1,0 +1,15 @@
+#!/usr/bin/env php
+<?php
+echo "Powered by MadelineProto, licensed under AGPLv3\n\n";
+if (!isset($argv[2])) {
+    echo "Usage: ".$argv[0]." seed port\n\nseed is any string or word that will be used as seed to generate the proxy secret\nport is the port where to start listening for connections\n";
+    exit(1);
+}
+if (!file_exists('madeline.php')) {
+    copy('https://phar.madelineproto.xyz/madeline.php', 'madeline.php');
+}
+include 'madeline.php';
+$secret = md5($argv[1]);
+echo "Secret is $secret\n";
+$handler = new \danog\MadelineProto\Server(['type' => AF_INET, 'protocol' => 0, 'address' => '0.0.0.0', 'port' => $argv[2], 'handler' => '\danog\MadelineProto\Server\Proxy', 'extra' => ['madeline' => new \danog\MadelineProto\API('proxy.madeline', ['app_info' => ['api_id' => 6, 'api_hash' => 'eb06d4abfb49dc3eeb1aeb98ae0f581e']]), 'secret' => hex2bin($secret), 'timeout' => 30]]);
+$handler->start();
