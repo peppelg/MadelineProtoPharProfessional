@@ -39,27 +39,19 @@ function ___install_madeline()
     $release_template = 'https://phar.madelineproto.xyz/release%s?v=new';
     $phar_template = 'https://phar.madelineproto.xyz/madeline%s.phar?v=new';
 
-
-    // Version definition
     $release_branch = defined('MADELINE_BRANCH') ? '-'.MADELINE_BRANCH : '-old';
-    if ($release_branch === '-') {
-        $release_branch = '';
-    }
-    $release_default_branch = '';
+    $release_default = '';
 
-    if (PHP_MAJOR_VERSION <= 5) {
+    if (PHP_MAJOR_VERSION === 5) {
         $release_branch = '5'.$release_branch;
-        $release_default_branch = '5';
-    } else if (PHP_MINOR_VERSION >= 3) {
-        $release_branch = '';
+        $release_default = '5';
     }
 
-    // Checking if defined branch/default branch builds can be downloaded
     if (!($release = @file_get_contents(sprintf($release_template, $release_branch)))) {
-        if (!($release = @file_get_contents(sprintf($release_template, $release_default_branch)))) {
+        if (!($release = @file_get_contents(sprintf($release_template, $release_default)))) {
             return;
         }
-        $release_branch = $release_default_branch;
+        $release_branch = $release_default;
     }
 
     if (!file_exists('madeline.phar') || !file_exists('madeline.phar.version') || file_get_contents('madeline.phar.version') !== $release) {
