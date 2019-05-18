@@ -8,14 +8,14 @@ if (file_exists(SRC_DIR.'/autoload.php') and strtolower(readline('Penzo che si e
   unlink(PHAR_NAME); #pulizia
   //passthru("find vendor/danog/madelineproto/ -name '*.php' -exec sed -i -e 's/continue;/continue 1;/g' {} \;"); #fix x php 7.3 EDIT: adesso nun c'è bisogno uso nuova versione va
   echo 'Working in progression 🔨';
-  $phar = new Phar(PHAR_NAME, 0, PHAR_NAME);
+  $phar = new Phar(__DIR__.'/'.PHAR_NAME, 0, PHAR_NAME);
   echo ' 🔨';
   $phar->startBuffering();
   echo ' 🔨';
-  $phar->buildFromDirectory(SRC_DIR, '/^((?!tests).)*(\.php|\.py|\.tl|\.json)$/i');
+  $phar->buildFromDirectory(realpath(SRC_DIR), '/^((?!tests).)*(\.php|\.py|\.tl|\.json)$/i');
   echo ' 🔨';
   echo ' 🔨';
-  $phar->setStub("<?php require 'vendor/autoload.php'; __HALT_COMPILER(); ");
+  $phar->setStub('<?php Phar::mapPhar(); require("phar://".__FILE__."/autoload.php"); __HALT_COMPILER(); ?>');
   echo ' 🔨';
   $phar->stopBuffering();
   file_put_contents('version', json_encode(['md5' => md5_file(PHAR_NAME)]));
