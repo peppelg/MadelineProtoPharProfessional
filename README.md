@@ -8,4 +8,4 @@ In cosa si differenzia???
 - u madeline che trovate qui è : [MadelineProtoBolled](https://github.com/peppelg/MadelineProtoBolled) (vengono effettuati degli accurati controlli nei nostri laboratori ed eventuali nyrda fixings [bo li fa mattiabl's]), senza bug's forse, e viene aggiornato alla nuova versione di madeline solo se funziona al 1OO% .
 
 
-MadelineProtoProfessional viene usato di default in : [TGUserbot](https://github.com/peppelg/TGuserbot) (xo co aggiornamenti automatici;; pero non dovrebbe essere problema perchè è garantito funzionamendo)
+MadelineProtoProfessional viene usato di default in : [TGUserbot](https://github.com/peppelg/TGuserbot)
