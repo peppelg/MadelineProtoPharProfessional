@@ -1,0 +1,20 @@
+{
+    "name": "peppelg/madelineprotopharprofessional",
+    "description": "Le nuove tecnologie ,prima passano da noi .",
+    "type": "project",
+    "license": "AGPLV3",
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/danog/phpseclib"
+        },
+        {
+	    "type": "git",
+            "url": "https://github.com/peppelg/MadelineProtoBolled"
+        }
+    ],
+    "require": {
+        "peppelg/madelineproto": "dev-master"
+    }
+} 
