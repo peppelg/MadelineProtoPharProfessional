@@ -28,7 +28,7 @@ if (file_exists(SRC_DIR.'/autoload.php') and strtolower(readline('Penzo che si e
   echo 'AI: Se ha funzionato fino a qui,,significa che boll test è passato.'.PHP_EOL;
   if (strtolower(readline('Desidera pushings? [Y/n]: ')) == 'y') {
     $commit = readline('Inserisca commit messaggio: ');
-    passthru('git add madeline.phar version make_phar.php composer.json composer_madeline_old.json composer_madeline_bolled.json README.md');
+    passthru('git add madeline.phar version make_phar.php composer.json composer_madeline_old.json composer_madeline.json composer_madeline_bolled.json README.md');
     passthru('git commit -m '.escapeshellarg($commit));
     passthru('git push');
   }
