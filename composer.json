@@ -8,13 +8,9 @@
         {
             "type": "git",
             "url": "https://github.com/danog/phpseclib"
-        },
-        {
-	    "type": "git",
-            "url": "https://github.com/peppelg/MadelineProtoBolled"
         }
     ],
     "require": {
-        "peppelg/madelineproto": "dev-master"
+        "danog/madelineproto": "dev-master"
     }
 }
