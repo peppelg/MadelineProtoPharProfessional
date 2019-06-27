@@ -11,6 +11,7 @@
         }
     ],
     "require": {
-        "danog/madelineproto": "dev-master"
+        "danog/madelineproto": "dev-master",
+	"amphp/dns": "dev-master#aa1892bd as 0.9"
     }
 }
